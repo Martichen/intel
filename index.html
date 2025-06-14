@@ -1,11 +1,62 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Página de Intel</title>
+    <link rel="stylesheet" href="css/estilos.css">
 </head>
 <body>
-    
+    <nav>
+        <button id="nav-inicio" class="active">Inicio</button>
+        <button id="nav-historia">Historia</button>
+        <button id="nav-productos">Productos</button>
+        <button id="nav-innovacion">Innovación</button>
+        <button id="nav-contacto">Contacto</button>
+    </nav>
+
+    <section id="inicio" class="active">
+        <h1>Bienvenido a Intel</h1>
+        <p>Intel es líder mundial en innovación de semiconductores, desarrollando tecnologías que cambian el mundo.</p>
+    </section>
+
+    <section id="historia">
+        <h2>Historia de Intel</h2>
+        <p>Fundada en 1968, Intel ha sido pionera en el desarrollo de microprocesadores y tecnologías clave para la computación moderna.</p>
+    </section>
+
+    <section id="productos">
+        <h2>Productos de Intel</h2>
+        <ul>
+            <li>Procesadores Intel Core</li>
+            <li>Unidades de estado sólido (SSD)</li>
+            <li>Placas base y chipsets</li>
+            <li>Tecnologías de redes y más</li>
+        </ul>
+    </section>
+
+    <section id="innovacion">
+        <h2>Innovación en Intel</h2>
+        <p>Intel invierte fuertemente en investigación y desarrollo para impulsar la inteligencia artificial, computación en la nube y el Internet de las cosas.</p>
+    </section>
+
+    <section id="contacto">
+        <h2>Contacto</h2>
+        <p>¿Tienes preguntas? Visita <a href="https://www.intel.la/content/www/xl/es/contact-us/contact-us.html" target="_blank">nuestro sitio de contacto</a>.</p>
+    </section>
+
+    <script>
+        const sections = ['inicio', 'historia', 'productos', 'innovacion', 'contacto'];
+        sections.forEach(id => {
+            document.getElementById('nav-' + id).onclick = function() {
+                // Cambiar sección activa
+                sections.forEach(sec => {
+                    document.getElementById(sec).classList.remove('active');
+                    document.getElementById('nav-' + sec).classList.remove('active');
+                });
+                document.getElementById(id).classList.add('active');
+                this.classList.add('active');
+            }
+        });
+    </script>
 </body>
 </html>
